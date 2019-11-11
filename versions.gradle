@@ -1,0 +1,40 @@
+ext {
+    appVersionCode = 1
+    appVersionName = "1.0"
+
+    kotlinVersion = "1.3.41"
+    gradleVersion = "3.4.2"
+    materialVersion = "1.0.0"
+    daggerVersion = "2.15"
+    epoxyVersion = "2.10.0"
+    roomVersion = "2.2.1"
+    paperParcelVersion = "2.0.8"
+    constraintLayoutVersion = "1.1.3"
+    jacksonVersion = "2.9.0"
+    retrofitVersion = "2.3.0"
+    pokeKotlinVersion = "2.3.0"
+    okHttpVersion = "3.9.0"
+    moshiVersion = "1.5.0"
+
+    archLifecycleVersion = '2.1.0'
+    androidxArchVersion = '2.1.0'
+
+    androidx = [
+            "appCompatVersion"    : "1.1.0",
+            "ktxVersion"          : "1.1.0",
+            "legacySupportVersion": "1.0.0",
+            "recycelerViewVersion": "1.0.0"
+    ]
+
+    rxJava = [
+            "rxJavaVersion"   : "2.1.14",
+            "rxAndroidVersion": "2.1.1",
+            "rxKotlinVersion" : "2.3.0"
+    ]
+
+    test = [
+            "runnerVersion"     : "1.2.0",
+            "espressoVersion"   : "3.2.0",
+            "mockitoCoreVersion": "2.25.0",
+    ]
+}

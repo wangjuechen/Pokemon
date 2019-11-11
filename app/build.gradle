@@ -1,0 +1,106 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+apply from: '../versions.gradle'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.jc.android.technicaltest"
+        multiDexEnabled true
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode appVersionCode
+        versionName appVersionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    androidExtensions {
+        experimental = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+
+    // Androidx support libraries
+    implementation "androidx.appcompat:appcompat:$androidx.appCompatVersion"
+    implementation "androidx.core:core-ktx:$androidx.ktxVersion"
+    implementation "androidx.legacy:legacy-support-v4:$androidx.legacySupportVersion"
+    implementation "androidx.recyclerview:recyclerview:$androidx.recyclerViewVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+
+    // Material Design libraries
+    implementation "com.google.android.material:material:$materialVersion"
+
+    // Dagger
+    implementation "com.google.dagger:dagger:$daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
+    implementation "com.google.dagger:dagger-android:$daggerVersion"
+    kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
+
+    // RxJava2
+    implementation "io.reactivex.rxjava2:rxjava:$rxJava.rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxJava.rxAndroidVersion"
+    implementation "io.reactivex.rxjava2:rxkotlin:$rxJava.rxKotlinVersion"
+
+    // Epoxy
+    implementation "com.airbnb.android:epoxy:$epoxyVersion"
+    kapt "com.airbnb.android:epoxy-processor:$epoxyVersion"
+
+    // Room components
+    implementation "androidx.room:room-runtime:$roomVersion"
+    implementation "androidx.room:room-ktx:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+    androidTestImplementation "androidx.room:room-testing:$roomVersion"
+
+    // Lifecycle components
+    implementation "androidx.lifecycle:lifecycle-extensions:$archLifecycleVersion"
+    kapt "androidx.lifecycle:lifecycle-compiler:$archLifecycleVersion"
+    androidTestImplementation "androidx.arch.core:core-testing:$androidxArchVersion"
+
+    // ViewModel Kotlin support
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$archLifecycleVersion"
+
+    // PaperParcel
+    implementation "nz.bradcampbell:paperparcel:$paperParcelVersion"
+    implementation "nz.bradcampbell:paperparcel-kotlin:$paperParcelVersion"
+    kapt "nz.bradcampbell:paperparcel-compiler:$paperParcelVersion"
+
+    // Jackson
+    implementation "com.fasterxml.jackson.core:jackson-core:$jacksonVersion"
+    implementation "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion"
+    implementation "com.fasterxml.jackson.core:jackson-annotations:$jacksonVersion"
+    implementation "com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonVersion"
+
+    // Retrofit & Moshi
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-jackson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofitVersion"
+    implementation "com.squareup.moshi:moshi:$moshiVersion"
+    implementation "com.squareup.moshi:moshi-kotlin:$moshiVersion"
+
+    implementation "org.koin:koin-android:2.0.1"
+    implementation 'org.koin:koin-androidx-viewmodel:2.0.1'
+    implementation 'org.koin:koin-androidx-scope:2.0.1'
+
+
+    // OkHttp3
+    implementation "com.squareup.okhttp3:okhttp:$okHttpVersion"
+
+    // Unit testing
+    testImplementation "junit:junit:4.12"
+    androidTestImplementation "androidx.test:runner:$test.runnerVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$test.espressoVersion"
+    androidTestImplementation "org.mockito:mockito-core:$test.mockitoCoreVersion"
+
+}
