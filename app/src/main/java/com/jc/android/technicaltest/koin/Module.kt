@@ -1,4 +1,4 @@
-package com.jc.android.technicaltest
+package com.jc.android.technicaltest.koin
 
 import com.jc.android.technicaltest.pokemonlist.repository.PokemonRepository
 import com.jc.android.technicaltest.pokemonlist.view.PokedexViewModel

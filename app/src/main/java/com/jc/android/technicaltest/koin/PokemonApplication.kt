@@ -1,4 +1,4 @@
-package com.jc.android.technicaltest
+package com.jc.android.technicaltest.koin
 
 import android.app.Application
 import org.koin.android.ext.koin.androidContext
@@ -14,7 +14,12 @@ class PokemonApplication : Application() {
         startKoin {
             androidLogger()
             androidContext(this@PokemonApplication)
-            modules(listOf(repositoryModule, viewModelModule, retrofitModule, apiModule))
+            modules(listOf(
+                repositoryModule,
+                viewModelModule,
+                retrofitModule,
+                apiModule
+            ))
         }
     }
 }
